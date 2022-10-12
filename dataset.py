@@ -6,8 +6,8 @@ from torch.utils.data import Dataset, DataLoader
 
 
 def UT_HAR_dataset(root_dir):
-    data_list = glob.glob(root_dir+'/UT_HAR/data/*.csv')
-    label_list = glob.glob(root_dir+'/UT_HAR/label/*.csv')
+    data_list = glob.glob(root_dir+'/UT-HAR/UT_HAR/data/*.csv')
+    label_list = glob.glob(root_dir+'/UT-HAR/UT_HAR/label/*.csv')
     WiFi_data = {}
     for data_dir in data_list:
         data_name = data_dir.split('/')[-1].split('.')[0]
