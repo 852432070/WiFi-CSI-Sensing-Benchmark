@@ -1,7 +1,6 @@
 import numpy as np
 import torch
 import torch.nn as nn
-import argparse
 from util import load_data_n_model
 
 def train(model, tensor_loader, num_epochs, learning_rate, criterion, device):
