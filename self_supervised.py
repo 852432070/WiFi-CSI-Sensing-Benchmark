@@ -3,7 +3,6 @@ import torch.optim as optim
 import random
 import torch.nn as nn
 from util import load_unsupervised_data_n_model
-import argparse
 from torch.autograd import Variable
 
 
@@ -97,20 +96,6 @@ def gaussian_noise(csi, epsilon):
 
 def main():
     learning_rate = 1e-3
-    parser = argparse.ArgumentParser('Self-Supervised')
-    parser.add_argument('--tau', type=float, default=1.0, metavar='LR')
-    parser.add_argument('--EPS', type=float, default=1e-5, help='episillon')
-    parser.add_argument('--weight-decay', type=float, default=1.5e-6, help='weight decay (default: 1e-4)')
-    parser.add_argument('--lam1', type=float, default=0.0, metavar='LR')
-    parser.add_argument('--lam2', type=float, default=1.0, metavar='LR')
-    parser.add_argument('--local_crops_number', type=int, default=12)
-    parser.add_argument('--min1', type=float, default=0.4, metavar='LR')
-    parser.add_argument('--max1', type=float, default=1.0, metavar='LR')
-    parser.add_argument('--min2', type=float, default=0.05, metavar='LR')
-    parser.add_argument('--max2', type=float, default=0.4, metavar='LR')
-    parser.add_argument('--gpu', type=int, default=1, metavar='gpu')
-    parser.add_argument('--eval', type=str, default='no', metavar='gpu')
-    parser.add_argument('--model', choices = ['MLP','LeNet','ResNet18','ResNet50','ResNet101','RNN','GRU','LSTM','BiLSTM','CNN+GRU','ViT'])
     args = parser.parse_args()
     args.global_crops_scale = (args.min1, args.max1)
     args.local_crops_scale = (args.min2, args.max2)
