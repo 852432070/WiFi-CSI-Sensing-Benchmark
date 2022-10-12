@@ -2,6 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from util import load_data_n_model
+import argparse
 
 def train(model, tensor_loader, num_epochs, learning_rate, criterion, device):
     model = model.to(device)
@@ -60,6 +61,10 @@ def test(model, tensor_loader, criterion, device):
     
 def main():
     print("entered main")
+    parser = argparse.ArgumentParser('WiFi Imaging Benchmark')
+    parser.add_argument("-f", dest = 'j_cfile', help = 
+                    "jupyter config file",
+                    default = "file.json", type = str)
     train_loader, test_loader, model, train_epoch = load_data_n_model(args.dataset, args.model, root)
     criterion = nn.CrossEntropyLoss()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
