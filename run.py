@@ -60,7 +60,6 @@ def test(model, tensor_loader, criterion, device):
     
 def main():
     print("entered main")
-    parser = argparse.ArgumentParser('WiFi Imaging Benchmark')
     train_loader, test_loader, model, train_epoch = load_data_n_model(args.dataset, args.model, root)
     criterion = nn.CrossEntropyLoss()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
