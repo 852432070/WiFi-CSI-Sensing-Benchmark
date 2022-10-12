@@ -56,12 +56,13 @@ def test(model, tensor_loader, criterion, device):
     test_loss = test_loss/len(tensor_loader.dataset)
     print("validation accuracy:{:.4f}, loss:{:.5f}".format(float(test_acc),float(test_loss)))
     return
-class item:
-    def __init__(self):
-        self.dataset = ''
-        self.model = ''
+
     
 def main():
+    class item:
+        def __init__(self):
+            self.dataset = ''
+            self.model = ''
     args = item()
     args.dataset = 'UT_HAR_data'
     args.model = 'RNN'
