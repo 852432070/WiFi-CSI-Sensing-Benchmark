@@ -65,7 +65,7 @@ def main():
             self.model = ''
     args = item()
     args.dataset = 'UT_HAR_data'
-    args.model = 'RNN'
+    args.model = 'ResNet101'
     root = '/kaggle/input'
     print("entered main")
     train_loader, test_loader, model, train_epoch = load_data_n_model(args.dataset, args.model, root)
