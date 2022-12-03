@@ -66,7 +66,7 @@ def main():
     args = item()
     args.dataset = 'NTU-Fi-HumanID'
     args.model = 'ResNet101'
-    root = '/kaggle/input/ntufi'
+    root = '/kaggle/input/ntufi/'
     print("entered main")
     train_loader, test_loader, model, train_epoch = load_data_n_model(args.dataset, args.model, root)
     criterion = nn.CrossEntropyLoss()
